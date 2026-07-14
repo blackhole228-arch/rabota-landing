@@ -25,35 +25,35 @@ height:100vh;
 display:flex;
 justify-content:center;
 align-items:center;
-background:#fff;
+background:#ffffff;
 font-family:Arial,sans-serif;
 text-align:center;
 }
 
 .container{
-max-width:600px;
+max-width:700px;
 padding:20px;
 }
 
 h1{
 font-size:60px;
-margin:0 0 20px;
+margin-bottom:20px;
 }
 
 p{
-font-size:30px;
+font-size:32px;
 font-weight:bold;
 margin-bottom:40px;
 }
 
-a{
+.btn{
 display:inline-block;
 background:#229ED9;
 color:#fff;
 text-decoration:none;
-padding:20px 40px;
+padding:22px 50px;
 border-radius:12px;
-font-size:24px;
+font-size:28px;
 font-weight:bold;
 }
 </style>
@@ -62,15 +62,126 @@ font-weight:bold;
 <body>
 
 <div class="container">
-<h1>GO TO TELEGRAM</h1>
+<h1 id="title">GO TO TELEGRAM</h1>
+<p id="subtitle">NO DEPOSIT REQUIRED</p>
 
-<p>NO DEPOSIT REQUIRED</p>
-
-<a href="https://t.me/stakejob5_bot"
-onclick="fbq('track','Lead');">
+<a
+class="btn"
+href="https://t.me/stakejob5_bot"
+onclick="fbq('track','Lead');"
+id="btn">
 OPEN TELEGRAM
 </a>
 </div>
+
+<script>
+
+const lang = navigator.language.toLowerCase();
+
+const texts = {
+
+bg:{
+title:"ОТИДЕТЕ В TELEGRAM",
+sub:"НЕ СЕ ИЗИСКВА ДЕПОЗИТ",
+btn:"ОТВОРИ TELEGRAM"
+},
+
+hr:{
+title:"IDI NA TELEGRAM",
+sub:"NIJE POTREBAN DEPOZIT",
+btn:"OTVORI TELEGRAM"
+},
+
+cs:{
+title:"PŘEJÍT NA TELEGRAM",
+sub:"NENÍ VYŽADOVÁN VKLAD",
+btn:"OTEVŘÍT TELEGRAM"
+},
+
+de:{
+title:"GEHE ZU TELEGRAM",
+sub:"KEINE EINZAHLUNG ERFORDERLICH",
+btn:"TELEGRAM ÖFFNEN"
+},
+
+fi:{
+title:"SIIRRY TELEGRAMIIN",
+sub:"TALLETUSTA EI TARVITA",
+btn:"AVAA TELEGRAM"
+},
+
+fr:{
+title:"ALLER SUR TELEGRAM",
+sub:"AUCUN DÉPÔT REQUIS",
+btn:"OUVRIR TELEGRAM"
+},
+
+el:{
+title:"ΜΕΤΑΒΑΣΗ ΣΤΟ TELEGRAM",
+sub:"ΔΕΝ ΑΠΑΙΤΕΙΤΑΙ ΚΑΤΑΘΕΣΗ",
+btn:"ΑΝΟΙΓΜΑ TELEGRAM"
+},
+
+it:{
+title:"VAI SU TELEGRAM",
+sub:"NESSUN DEPOSITO RICHIESTO",
+btn:"APRI TELEGRAM"
+},
+
+nl:{
+title:"GA NAAR TELEGRAM",
+sub:"GEEN STORTING VEREIST",
+btn:"OPEN TELEGRAM"
+},
+
+pl:{
+title:"PRZEJDŹ DO TELEGRAM",
+sub:"BRAK WYMAGANEGO DEPOZYTU",
+btn:"OTWÓRZ TELEGRAM"
+},
+
+pt:{
+title:"IR PARA O TELEGRAM",
+sub:"NENHUM DEPÓSITO NECESSÁRIO",
+btn:"ABRIR TELEGRAM"
+},
+
+ro:{
+title:"MERGI PE TELEGRAM",
+sub:"NU ESTE NECESAR DEPOZIT",
+btn:"DESCHIDE TELEGRAM"
+},
+
+sr:{
+title:"IDI NA TELEGRAM",
+sub:"DEPOZIT NIJE POTREBAN",
+btn:"OTVORI TELEGRAM"
+},
+
+sk:{
+title:"PREJSŤ NA TELEGRAM",
+sub:"NIE JE POTREBNÝ VKLAD",
+btn:"OTVORIŤ TELEGRAM"
+},
+
+es:{
+title:"IR A TELEGRAM",
+sub:"NO SE REQUIERE DEPÓSITO",
+btn:"ABRIR TELEGRAM"
+}
+
+};
+
+for (const key in texts){
+if(lang.startsWith(key)){
+document.getElementById('title').innerText=texts[key].title;
+document.getElementById('subtitle').innerText=texts[key].sub;
+document.getElementById('btn').innerText=texts[key].btn;
+break;
+}
+}
+
+</script>
 
 </body>
 </html>
