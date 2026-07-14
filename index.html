@@ -5,56 +5,75 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Telegram</title>
 
+<!-- Facebook Pixel -->
 <script>
-!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+!function(f,b,e,v,n,t,s){
+if(f.fbq)return;
+n=f.fbq=function(){n.callMethod?
 n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}
-(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+if(!f._fbq)f._fbq=n;
+n.push=n;
+n.loaded=!0;
+n.version='2.0';
+n.queue=[];
+t=b.createElement(e);
+t.async=!0;
+t.src=v;
+s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s);
+}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
 
-fbq('init','27191367827138349');
-fbq('track','PageView');
+fbq('init', '27191367827138349');
+fbq('track', 'PageView');
 </script>
 
 <style>
-body{
+*{
 margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+font-family:Arial,sans-serif;
+background:#ffffff;
 height:100vh;
 display:flex;
 justify-content:center;
 align-items:center;
-background:#ffffff;
-font-family:Arial,sans-serif;
 text-align:center;
 }
 
 .container{
-max-width:700px;
 padding:20px;
 }
 
 h1{
-font-size:60px;
-margin-bottom:20px;
+font-size:72px;
+font-weight:900;
+margin-bottom:25px;
 }
 
-p{
-font-size:32px;
-font-weight:bold;
-margin-bottom:40px;
+h2{
+font-size:38px;
+font-weight:700;
+margin-bottom:50px;
 }
 
-.btn{
+.button{
 display:inline-block;
-background:#229ED9;
+background:#2AABEE;
 color:#fff;
 text-decoration:none;
-padding:22px 50px;
-border-radius:12px;
+padding:22px 60px;
 font-size:28px;
-font-weight:bold;
+font-weight:700;
+border-radius:14px;
+transition:.2s;
+}
+
+.button:hover{
+transform:scale(1.03);
 }
 </style>
 </head>
@@ -63,13 +82,12 @@ font-weight:bold;
 
 <div class="container">
 <h1 id="title">GO TO TELEGRAM</h1>
-<p id="subtitle">NO DEPOSIT REQUIRED</p>
+<h2 id="subtitle">NO DEPOSIT REQUIRED</h2>
 
-<a
-class="btn"
-href="https://t.me/stakejob5_bot"
-onclick="fbq('track','Lead');"
-id="btn">
+<a id="telegramBtn"
+class="button"
+href="https://t.me/english_channel"
+onclick="fbq('track','Lead');">
 OPEN TELEGRAM
 </a>
 </div>
@@ -80,106 +98,174 @@ const lang = navigator.language.toLowerCase();
 
 const texts = {
 
-bg:{
-title:"ОТИДЕТЕ В TELEGRAM",
-sub:"НЕ СЕ ИЗИСКВА ДЕПОЗИТ",
-btn:"ОТВОРИ TELEGRAM"
-},
+bg:[
+"ОТВОРЕТЕ TELEGRAM",
+"НЕ СЕ ИЗИСКВА ДЕПОЗИТ",
+"ОТВОРИ TELEGRAM"
+],
 
-hr:{
-title:"IDI NA TELEGRAM",
-sub:"NIJE POTREBAN DEPOZIT",
-btn:"OTVORI TELEGRAM"
-},
+de:[
+"ZU TELEGRAM",
+"KEINE EINZAHLUNG ERFORDERLICH",
+"TELEGRAM ÖFFNEN"
+],
 
-cs:{
-title:"PŘEJÍT NA TELEGRAM",
-sub:"NENÍ VYŽADOVÁN VKLAD",
-btn:"OTEVŘÍT TELEGRAM"
-},
+fr:[
+"ALLER SUR TELEGRAM",
+"AUCUN DÉPÔT REQUIS",
+"OUVRIR TELEGRAM"
+],
 
-de:{
-title:"GEHE ZU TELEGRAM",
-sub:"KEINE EINZAHLUNG ERFORDERLICH",
-btn:"TELEGRAM ÖFFNEN"
-},
+it:[
+"VAI SU TELEGRAM",
+"NESSUN DEPOSITO RICHIESTO",
+"APRI TELEGRAM"
+],
 
-fi:{
-title:"SIIRRY TELEGRAMIIN",
-sub:"TALLETUSTA EI TARVITA",
-btn:"AVAA TELEGRAM"
-},
+nl:[
+"GA NAAR TELEGRAM",
+"GEEN STORTING VEREIST",
+"OPEN TELEGRAM"
+],
 
-fr:{
-title:"ALLER SUR TELEGRAM",
-sub:"AUCUN DÉPÔT REQUIS",
-btn:"OUVRIR TELEGRAM"
-},
+pl:[
+"PRZEJDŹ DO TELEGRAM",
+"BEZ DEPOZYTU",
+"OTWÓRZ TELEGRAM"
+],
 
-el:{
-title:"ΜΕΤΑΒΑΣΗ ΣΤΟ TELEGRAM",
-sub:"ΔΕΝ ΑΠΑΙΤΕΙΤΑΙ ΚΑΤΑΘΕΣΗ",
-btn:"ΑΝΟΙΓΜΑ TELEGRAM"
-},
+pt:[
+"IR PARA TELEGRAM",
+"NENHUM DEPÓSITO NECESSÁRIO",
+"ABRIR TELEGRAM"
+],
 
-it:{
-title:"VAI SU TELEGRAM",
-sub:"NESSUN DEPOSITO RICHIESTO",
-btn:"APRI TELEGRAM"
-},
+ro:[
+"MERGI PE TELEGRAM",
+"NU ESTE NECESAR DEPOZIT",
+"DESCHIDE TELEGRAM"
+],
 
-nl:{
-title:"GA NAAR TELEGRAM",
-sub:"GEEN STORTING VEREIST",
-btn:"OPEN TELEGRAM"
-},
+es:[
+"IR A TELEGRAM",
+"NO SE REQUIERE DEPÓSITO",
+"ABRIR TELEGRAM"
+],
 
-pl:{
-title:"PRZEJDŹ DO TELEGRAM",
-sub:"BRAK WYMAGANEGO DEPOZYTU",
-btn:"OTWÓRZ TELEGRAM"
-},
+cs:[
+"PŘEJÍT NA TELEGRAM",
+"NENÍ VYŽADOVÁN VKLAD",
+"OTEVŘÍT TELEGRAM"
+],
 
-pt:{
-title:"IR PARA O TELEGRAM",
-sub:"NENHUM DEPÓSITO NECESSÁRIO",
-btn:"ABRIR TELEGRAM"
-},
+sk:[
+"PREJSŤ NA TELEGRAM",
+"BEZ VKLADU",
+"OTVORIŤ TELEGRAM"
+],
 
-ro:{
-title:"MERGI PE TELEGRAM",
-sub:"NU ESTE NECESAR DEPOZIT",
-btn:"DESCHIDE TELEGRAM"
-},
+hr:[
+"IDI NA TELEGRAM",
+"NIJE POTREBAN DEPOZIT",
+"OTVORI TELEGRAM"
+],
 
-sr:{
-title:"IDI NA TELEGRAM",
-sub:"DEPOZIT NIJE POTREBAN",
-btn:"OTVORI TELEGRAM"
-},
+sr:[
+"IDI NA TELEGRAM",
+"NIJE POTREBAN DEPOZIT",
+"OTVORI TELEGRAM"
+],
 
-sk:{
-title:"PREJSŤ NA TELEGRAM",
-sub:"NIE JE POTREBNÝ VKLAD",
-btn:"OTVORIŤ TELEGRAM"
-},
+fi:[
+"SIIRRY TELEGRAMIIN",
+"TALLETUSTA EI TARVITA",
+"AVAA TELEGRAM"
+],
 
-es:{
-title:"IR A TELEGRAM",
-sub:"NO SE REQUIERE DEPÓSITO",
-btn:"ABRIR TELEGRAM"
-}
-
+el:[
+"ΜΕΤΑΒΑΣΗ ΣΤΟ TELEGRAM",
+"ΔΕΝ ΑΠΑΙΤΕΙΤΑΙ ΚΑΤΑΘΕΣΗ",
+"ΑΝΟΙΓΜΑ TELEGRAM"
+]
 };
 
-for (const key in texts){
+for(let key in texts){
+
 if(lang.startsWith(key)){
-document.getElementById('title').innerText=texts[key].title;
-document.getElementById('subtitle').innerText=texts[key].sub;
-document.getElementById('btn').innerText=texts[key].btn;
+
+document.getElementById("title").innerText=texts[key][0];
+document.getElementById("subtitle").innerText=texts[key][1];
+document.getElementById("telegramBtn").innerText=texts[key][2];
+
 break;
 }
 }
+
+/* TELEGRAM LINKS */
+
+let telegramLink = "https://t.me/english_channel";
+
+if(lang.startsWith("bg")){
+telegramLink = "https://t.me/bulgaria_channel";
+}
+
+else if(lang.startsWith("de")){
+telegramLink = "https://t.me/germany_channel";
+}
+
+else if(lang.startsWith("fr")){
+telegramLink = "https://t.me/france_channel";
+}
+
+else if(lang.startsWith("it")){
+telegramLink = "https://t.me/italy_channel";
+}
+
+else if(lang.startsWith("nl")){
+telegramLink = "https://t.me/netherlands_channel";
+}
+
+else if(lang.startsWith("pl")){
+telegramLink = "https://t.me/poland_channel";
+}
+
+else if(lang.startsWith("pt")){
+telegramLink = "https://t.me/portugal_channel";
+}
+
+else if(lang.startsWith("ro")){
+telegramLink = "https://t.me/romania_channel";
+}
+
+else if(lang.startsWith("es")){
+telegramLink = "https://t.me/spain_channel";
+}
+
+else if(lang.startsWith("cs")){
+telegramLink = "https://t.me/czech_channel";
+}
+
+else if(lang.startsWith("sk")){
+telegramLink = "https://t.me/slovakia_channel";
+}
+
+else if(lang.startsWith("hr")){
+telegramLink = "https://t.me/croatia_channel";
+}
+
+else if(lang.startsWith("sr")){
+telegramLink = "https://t.me/serbia_channel";
+}
+
+else if(lang.startsWith("fi")){
+telegramLink = "https://t.me/finland_channel";
+}
+
+else if(lang.startsWith("el")){
+telegramLink = "https://t.me/greece_channel";
+}
+
+document.getElementById("telegramBtn").href = telegramLink;
 
 </script>
 
